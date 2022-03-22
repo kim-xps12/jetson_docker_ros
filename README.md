@@ -17,7 +17,7 @@ cudaにアクセスできてrvizをjetson単体で実行でき，ROSをネイテ
 - コンテナ内ユーザ名 : docker
 - コンテナ内ユーザPW : docker （ユーザ名/PWは適宜変更してください）
 - Dockerバージョン : 20.10.13 build 1224086
-- Docker-composeバージョン : 1.29.2 build unknown（aptで入れると1.19が入りますが，1.21以降でないとruntimeのタグが使えないためエラーで落ちるので注意．僕はpip3でインストールしました）
+- docker-composeバージョン : 1.29.2 build unknown（aptで入れると1.19が入りますが，1.21以降でないとruntimeのタグが使えないためエラーで落ちるので注意．僕はpip3でインストールしました）
 
 ## 使い方
 1. このリポジトリをcloneする．
