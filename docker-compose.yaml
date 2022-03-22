@@ -1,0 +1,22 @@
+version: '2.3'
+services:  
+    melodic_docker: 
+        runtime: nvidia 
+        build: 
+            context: . 
+        container_name: melodic_docker
+        network_mode: host 
+        environment:  
+          - "DISPLAY=$DISPLAY" 
+          - "QT_X11_NO_MITSHM=1" 
+          - "TERM=xterm-256color"  
+          - "XAUTHORITY=/tmp/.docker.xauth" 
+        volumes:  
+          - "/home/$USER:/home/HOST" 
+          - "/etc/sudoers.d:/etc/sudoers.d:ro" 
+          - "/tmp/.X11-unix:/tmp/.X11-unix:rw" 
+          - "/tmp/.docker.xauth:/tmp/.docker.xauth:rw" 
+        #devices:  
+        #- "/dev/ttyUSB0:/dev/ttyUSB0" 
+        tty: true 
+        stdin_open: true
