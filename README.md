@@ -19,6 +19,12 @@ cudaにアクセスできてrvizをjetson単体で実行でき，簡単に起動
 - Dockerバージョン : 20.10.13 build 1224086
 - docker-composeバージョン : 1.29.2 build unknown（aptで入れると1.19が入りますが，1.21以降でないとruntimeのタグが使えないためエラーで落ちるので注意．僕はpip3でインストールしました）
 
+
+## 注意
+- コンテナ内ユーザのID/PWをDockerfileに平文でベタ書きしているので，セキュリティには気をつけてください．
+- コンテナ内にattachしている間は分かりやすいようにbashのユーザ名表示をデフォルトの緑から水色に変えていますが，かなり無理矢理に設定を変えています．気になる方はDockerfile末尾3行をコメントアウトしてからお使いください．
+
+
 ## 使い方
 1. このリポジトリをcloneする．
    
@@ -53,6 +59,7 @@ cudaにアクセスできてrvizをjetson単体で実行でき，簡単に起動
    tmuxでペインを2個以上作り，片方で`roscore`，もう片方で`rviz`
 
 1. お好みでパッケージ名のtab補完[[5]](https://penguin-coffeebreak.com/archives/242)も使えるようにしておくと便利かもしれません．
+
 
 ## 参考
 [1] [https://forums.developer.nvidia.com/t/docker-error-response-from-daemon-failed-to-create-shim-oci-runtime-create-failed-container-linux-go-starting-container-process-caused-error/197663/3](https://forums.developer.nvidia.com/t/docker-error-response-from-daemon-failed-to-create-shim-oci-runtime-create-failed-container-linux-go-starting-container-process-caused-error/197663/3)
