@@ -34,8 +34,17 @@ cudaにアクセスできてrvizをjetson単体で実行でき，簡単に起動
 
 2. 公式の手順でDockerをインストール[[2]](https://docs.docker.com/engine/install/ubuntu/) する．
 3. pip3でdocker-composeをインストール[[3]](https://matsuand.github.io/docs.docker.jp.onthefly/compose/install/)する．
-4. お使いのユーザをdockerグループに追加し，sudo無しでdockerコマンドが実行できるように[[4]](https://qiita.com/ITF_katoyu/items/1bdaaad9f64af86bbfb7)する．
-5. launch_compose.shに実行権限を付与する．
+   ```
+   sudo apt install python3-pip
+   pip3 install --upgrade pip
+   pip3 install docker-compose
+   sudo reboot
+   docker-compose --version
+   ```
+
+
+5. お使いのユーザをdockerグループに追加し，sudo無しでdockerコマンドが実行できるように[[4]](https://qiita.com/ITF_katoyu/items/1bdaaad9f64af86bbfb7)する．
+6. launch_compose.shに実行権限を付与する．
 
    ```
    cd jetson_docker_ros
